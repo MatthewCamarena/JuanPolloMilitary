@@ -2,6 +2,12 @@
     <title>Hours Calculator</title>
    
     <center> <h1><font color="White">Juan Pollo Hours Calculator</font></h1> </center>
+    <script>
+function calculate() {
+  x = document.getElementById("male");
+  x.options[x.selectedIndex].text = document.getElementById("MondayIn");
+}
+</script>
   </head>
 
 <style>
@@ -16,6 +22,8 @@ body {
 </style>
 <body>
     Monday: <input type="text" name="MondayIn"><br>
-    <input type="submit" value="Submit">
+    <label for="male">Male</label>
+    <input type="button" onclick="calculate()" value="Calculate">
+</form>
 </body>
 
