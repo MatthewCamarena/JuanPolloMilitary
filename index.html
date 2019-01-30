@@ -9,7 +9,7 @@
         function myFunction() {
             var x = [document.getElementById("MondayIn").value, document.getElementById("TuesdayIn").value, document.getElementById("WednesdayIn"),document.getElementById("ThursdayIn"),document.getElementById("FridayIn"),document.getElementById("SaturdayIn"),document.getElementById("SundayIn")];
             var y = [document.getElementById("MondayOut").value, document.getElementById("TuesdayOut").value];
-            var z = 0;
+            var z = x[0] + x[1];
             var z2 = 0
             var i;
             for( i = 0; i < 7; i++)
@@ -17,7 +17,7 @@
                 z = x[i];
                 z2 += z;
             }
-            document.getElementById("demo").innerHTML = z2;
+            document.getElementById("demo").innerHTML = z;
             
             
            
