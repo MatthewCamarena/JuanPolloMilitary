@@ -7,9 +7,9 @@
     
     <script>
         function myFunction() {
-            var x = document.getElementById("MondayIn").value;
+            var x = [document.getElementById("MondayIn").value, "2"];
             var y = document.getElementById("MondayOut").value;
-            document.getElementById("demo").innerHTML =  y-x;
+            document.getElementById("demo").innerHTML =  y-x[0];
            
         }
         
@@ -44,7 +44,7 @@ body {
     Monday:
     <input type="text" name="MondayIn" id="MondayIn"> <input type="text" name="MondayOut" id="MondayOut"><br>
     
-    <p id="demo">Hello</p>
+    <p id="demo">0</p>
     
     <button type="button" onclick="myFunction()">Calculate</button>
     
