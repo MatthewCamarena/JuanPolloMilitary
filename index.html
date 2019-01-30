@@ -73,23 +73,23 @@
 		hourHolder = Math.floor(rHour);
 		minuteHolder = rHour - hourHolder;
 
-		if (minuteHolder  >= 0 && minuteHolder < .17)
+		if (minuteHolder  >= 0 && minuteHolder < .16)
 		{
 			minuteHolder = 0;
 		}
-		else if(minuteHolder >= .17 && minuteHolder < .43)
+		else if(minuteHolder >= .16 && minuteHolder < .42)
 		{
 			minuteHolder = .25;
 		}
-		else if(minuteHolder >= .43 && minuteHolder < .67)
+		else if(minuteHolder >= .42 && minuteHolder < .68)
 		{
 			minuteHolder = .5;
 		}
-		else if(minuteHolder >= .67 && minuteHolder < .93)
+		else if(minuteHolder >= .68 && minuteHolder < .92)
 		{
 			minuteHolder = .75;
 		}
-		else if(minuteHolder >= .93)
+		else if(minuteHolder >= .92)
 		{
 			minuteHolder = 1.0;
 		}
