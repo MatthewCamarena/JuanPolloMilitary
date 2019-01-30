@@ -11,14 +11,22 @@
             var y = [document.getElementById("MondayOut").value, document.getElementById("TuesdayOut").value, document.getElementById("WednesdayOut").value, document.getElementById("ThursdayOut").value, document.getElementById("FridayOut").value, document.getElementById("SaturdayOut").value, document.getElementById("SundayOut").value];
             
             var z2 = 0;
+            var ot = 0;
+            var dt = 0;
             var i = 0;
             for(i; i<7;i++)
             {
              var z = y[i]-x[i];
+                if(z > 8)
+                {
+                 dt += z - 8;
+                 z = 8;
+                }
                 z2 += z;
             }
 
             document.getElementById("reg").innerHTML = z2;
+            document.getElementById("ove").innerHTML = dt;
               
         }
         
