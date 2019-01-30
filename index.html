@@ -17,6 +17,11 @@
             return p2-p1;
         }
         
+        function reset()
+        {
+        document.getElementById("demo").innerHTML = "";
+        }
+        
     </script>
     
 </head>
@@ -41,9 +46,10 @@ body {
     
     <p id="demo">Hello</p>
     
-    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello"'>Calculate</button>
-    <button type="button" onclick='document.getElementById("demo").innerHTML = "Goodbye"'>goodbye</button>
-    <button type="button" onclick="myFunction()">Reset</button>
+    <button type="button" onclick="myFunction()">Calculate</button>
+    
+    
+    <button type="button" onclick="reset()">Reset</button>
     
 </body></center>
 
