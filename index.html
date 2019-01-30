@@ -64,23 +64,23 @@
 		hourHolder = Math.floor(rHour);
 		minuteHolder = rHour - hourHolder;
 
-		if (minuteHolder  >= 0 && minuteHolder < .17)
+		if (minuteHolder  >= 0 && minuteHolder <= .17)
 		{
 			minuteHolder = 0;
 		}
-		else if(minuteHolder >= .17 && minuteHolder < .43)
+		else if(minuteHolder > .17 && minuteHolder <= .43)
 		{
 			minuteHolder = .25;
 		}
-		else if(minuteHolder >= .43 && minuteHolder < .67)
+		else if(minuteHolder > .43 && minuteHolder <= .67)
 		{
 			minuteHolder = .5;
 		}
-		else if(minuteHolder >= .67 && minuteHolder < .93)
+		else if(minuteHolder > .67 && minuteHolder <= .93)
 		{
 			minuteHolder = .75;
 		}
-		else if(minuteHolder >= .93)
+		else if(minuteHolder > .93)
 		{
 			minuteHolder = 1.0;
 		}
@@ -139,7 +139,7 @@ body {
     <th>Day</th>
     <th>In</th>
     <th>Out</th>
-    <th>Break</th>
+    <th>Break[WIP]</th>
   </tr>
   <tr>
     <td>Monday</td>
