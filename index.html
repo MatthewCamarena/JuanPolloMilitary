@@ -9,11 +9,17 @@
         function myFunction() {
             var x = [document.getElementById("MondayIn").value, document.getElementById("TuesdayIn").value, document.getElementById("WednesdayIn").value,document.getElementById("ThursdayIn").value,document.getElementById("FridayIn").value,document.getElementById("SaturdayIn").value,document.getElementById("SundayIn").value];
             var y = [document.getElementById("MondayOut").value, document.getElementById("TuesdayOut").value];
-            var z = x[0]-x[1];
-            var z2 = 0
+            
+            var z2 = 0;
+            var i = 0;
+            for(i; i<7;i++)
+            {
+             var z = x[i]-x[i];
+                z2 += z;
+            }
 
           
-            document.getElementById("demo").innerHTML = z;
+            document.getElementById("demo").innerHTML = z2;
             
             
            
