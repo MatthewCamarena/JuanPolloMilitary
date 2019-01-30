@@ -18,16 +18,10 @@
                 z2 += z;
             }
 
-          
-            document.getElementById("demo").innerHTML = z2;
-            
-            
-           
+            document.getElementById("reg").innerHTML = z2;
+              
         }
         
-        function twoFourSubtract(p1,p2) {
-            return p2-p1;
-        }
         
         function reset()
         {
@@ -48,7 +42,7 @@
         document.getElementById("SundayOut").value= "";
             
             
-        document.getElementById("demo").innerHTML = "";
+        document.getElementById("reg").innerHTML = "";
         }
         
     </script>
@@ -135,9 +129,9 @@ body {
     <td><input type="text" id="SundayOut"></td>
   </tr>
 </table>
-     Regular Total: <label id="demo">0</label><br>
-    OverTime Total: <br>
-    DoubleTime Total: <br>
+     Regular Total: <label id="reg">0</label><br>
+    OverTime Total: <label id="ove">0</label><br>
+    DoubleTime Total: <label id="doub">0</label><br>
     <button type="button" onclick="myFunction()">Calculate</button>
     
     
