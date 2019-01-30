@@ -7,10 +7,16 @@
     
     <script>
         function myFunction() {
-            var x = [document.getElementById("MondayIn").value, document.getElementById("TuesdayIn").value];
+            var x = [document.getElementById("MondayIn").value, document.getElementById("TuesdayIn").value, document.getElementById("wedIn"),document.getElementById("thuIn"),document.getElementById("friIn"),document.getElementById("satIn"),document.getElementById("sunIn")];
             var y = [document.getElementById("MondayOut").value, document.getElementById("TuesdayOut").value];
-            var z = y[0]-x[0];
-            var z2 = y[1]-x[1]
+            var z = 0;
+            var z2 = 0
+            var i;
+            for( i = 0; i < 7; i++)
+            {
+                z = x[i];
+                z2 = z2 + z;
+            }
             document.getElementById("demo").innerHTML = z+z2;
             
             
@@ -23,7 +29,7 @@
         
         function reset()
         {
-        document.getElementById("MondayIn").value = 0;
+        document.getElementById("MondayIn").value = "";
         document.getElementById("demo").innerHTML = "";
         }
         
