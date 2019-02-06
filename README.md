@@ -1,5 +1,5 @@
 # Web Development Test
-## Things I want this website to be able to do / have.
-* Have clickable buttons
-* Have textboxes 
-* secret minigame?
+## Hours Calculator
+* Calculates total amount of hours per week worked
+* Handles OverTime, DoubleTime and rounding
+* Breaks are still a work in progress 
