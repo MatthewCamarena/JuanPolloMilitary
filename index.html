@@ -3,47 +3,63 @@
 <head>
     <title>Hours Calculator</title>
    
-    <center> <h1><font color="White">Juan Pollo Hours Calculator</font></h1> </center>
+    <center> <h1><font color="White">Juan Pollo Decimal Hours Calculator</font></h1> </center>
     
     <script>
         function myFunction() {
             var x = [document.getElementById("MondayIn").value, document.getElementById("TuesdayIn").value, document.getElementById("WednesdayIn").value,document.getElementById("ThursdayIn").value,document.getElementById("FridayIn").value,document.getElementById("SaturdayIn").value,document.getElementById("SundayIn").value];
             var y = [document.getElementById("MondayOut").value, document.getElementById("TuesdayOut").value, document.getElementById("WednesdayOut").value, document.getElementById("ThursdayOut").value, document.getElementById("FridayOut").value, document.getElementById("SaturdayOut").value, document.getElementById("SundayOut").value];
+            var breaks = [document.getElementById("MondayBreak").value, document.getElementById("TuesdayBreak").value, document.getElementById("WednesdayBreak").value, document.getElementById("ThursdayBreak").value, document.getElementById("FridayBreak").value, document.getElementById("SaturdayBreak").value, document.getElementById("SundayBreak").value]
             
             var z2 = 0;
             var ot = 0;
             var dt = 0;
             var i = 0;
+            var tempbreak = 0;
             for(i; i<7;i++)
             {
-             var z = y[i]-x[i];
-		if(z > 12)
-		{
-		dt += z - 12;
-		ot += 4;
-		z = 8;
-		}
+             	var z = parseFloat(y[i]-x[i]);
+             	var tempval = parseFloat(breaks[i]);
+             	if(tempval)
+             	{
+             		z -= tempval;
+             	}
+				if(z > 12)
+				{
+				dt += z - 12;
+				ot += 4;
+				z = 8;
+				}
+
                 if(z > 8)
                 {
                  ot += z - 8;
                  z = 8;
                 }
                 z2 += z;
+                
+
+
             }
 		
            	
-            var z3 = roundHours(z2);
+            
             
 	    if(z3 > 40)
 	    {
 		ot += z3 -40;
 		z3 = 40;
 	    }
+	    var z3 = roundHours(z2);
+	    ot = roundHours(ot);
+	    dt = roundHours(dt);
+
 		
 		
             document.getElementById("reg").innerHTML = z3;
             document.getElementById("ove").innerHTML = ot;
             document.getElementById("doub").innerHTML = dt;
+            document.getElementById("testbreak").innerHTML = tempbreak;
               
         }
         
@@ -70,6 +86,16 @@
         document.getElementById("reg").innerHTML = "0";
         document.getElementById("ove").innerHTML = "0";
 	document.getElementById("doub").innerHTML = "0";
+
+
+		document.getElementById("MondayBreak").selectedIndex = 0;
+		document.getElementById("TuesdayBreak").selectedIndex = 0;
+		document.getElementById("WednesdayBreak").selectedIndex = 0;
+		document.getElementById("ThursdayBreak").selectedIndex = 0;
+		document.getElementById("FridayBreak").selectedIndex = 0;
+		document.getElementById("SatdayBreak").selectedIndex = 0;
+		document.getElementById("SundayBreak").selectedIndex = 0;
+
         }
         
     function roundHours(rHour)
@@ -155,82 +181,85 @@ body {
     <th>Day</th>
     <th>In</th>
     <th>Out</th>
-    <th>Break[WIP]</th>
+    <th>Break</th>
   </tr>
   <tr>
     <td>Monday</td>
     <td><input type="text" name="MondayIn" id="MondayIn"></td>
     <td><input type="text" name="MondayOut" id="MondayOut"></td>
-    <td><select>
-  <option value="zero" id="mz">0</option>
-  <option value="half" id="mh">1/2hr</option>
-  <option value="one" id="mo">1hr</option>
+    <td><select id="MondayBreak">
+  <option value="0" id="mz">0</option>
+  <option value=".5" id="mh">1/2hr</option>
+  <option value="1" id="mo">1hr</option>
      </select></td>
   </tr>
   <tr>
     <td>Tuesday</td>
     <td><input type="text" name="TuesdayIn" id="TuesdayIn"></td>
     <td><input type="text" name="TuesdayOut" id="TuesdayOut"></td>
-    <td><select>
-  <option value="zero" id="tz">0</option>
-  <option value="half" id="th">1/2hr</option>
-  <option value="one" id="to">1hr</option>
+    <td><select id="TuesdayBreak">
+  <option value="0" id="tz">0</option>
+  <option value=".5" id="th">1/2hr</option>
+  <option value="1" id="to">1hr</option>
      </select></td>
   </tr>
   <tr>
     <td>Wednesday</td>
     <td><input type="text" id="WednesdayIn"> </td>
     <td><input type="text" id="WednesdayOut"></td>
-    <td><select>
-  <option value="zero" id="wz">0</option>
-  <option value="half" id="wh">1/2hr</option>
-  <option value="one" id="wo">1hr</option>
+    <td><select id="WednesdayBreak">
+  <option value="0" id="wz">0</option>
+  <option value=".5" id="wh">1/2hr</option>
+  <option value="1" id="wo">1hr</option>
      </select></td>
   </tr>
   <tr>
     <td>Thursday</td>
     <td><input type="text" id="ThursdayIn"></td>
     <td><input type="text" id="ThursdayOut"></td>
-    <td><select>
-  <option value="zero" id="thz">0</option>
-  <option value="half" id="thh">1/2hr</option>
-  <option value="one" id="tho">1hr</option>
+    <td><select id="ThursdayBreak">
+  <option value="0" id="thz">0</option>
+  <option value=".5" id="thh">1/2hr</option>
+  <option value="1" id="tho">1hr</option>
      </select></td>
   </tr>
   <tr>
     <td>Friday</td>
     <td><input type="text" id="FridayIn"></td>
     <td><input type="text" id="FridayOut"></td>
-    <td><select>
-  <option value="zero" id="fz">0</option>
-  <option value="half" id="fh">1/2hr</option>
-  <option value="one" id="fo">1hr</option>
+    <td><select id="FridayBreak">
+  <option value="0" id="fz">0</option>
+  <option value=".5" id="fh">1/2hr</option>
+  <option value="1" id="fo">1hr</option>
      </select></td>
   </tr>
   <tr>
     <td>Saturday</td>
     <td><input type="text" id="SaturdayIn"></td>
     <td><input type="text" id="SaturdayOut"></td>
-    <td><select>
-  <option value="zero" id="saz">0</option>
-  <option value="half" id="sah">1/2hr</option>
-  <option value="one" id="sao">1hr</option>
+    <td><select id="SaturdayBreak">
+  <option value="0" id="saz">0</option>
+  <option value=".5" id="sah">1/2hr</option>
+  <option value="1" id="sao">1hr</option>
      </select></td>
   </tr>
   <tr>
     <td>Sunday</td>
     <td><input type="text" id="SundayIn"></td>
     <td><input type="text" id="SundayOut"></td>
-    <td><select>
-  <option value="zero" id="suz">0</option>
-  <option value="half" id="suh">1/2hr</option>
-  <option value="one" id="suo">1hr</option>
+    <td><select id="SundayBreak">
+  <option value="0" id="suz">0</option>
+  <option value=".5" id="suh">1/2hr</option>
+  <option value="1" id="suo">1hr</option>
      </select></td>
   </tr>
 </table>
     Regular Total: <label id="reg">0</label><br>
     OverTime Total: <label id="ove">0</label><br>
     DoubleTime Total: <label id="doub">0</label><br>
+
+
+
     <button type="button" onclick="myFunction()">Calculate</button>
     
     
