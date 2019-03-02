@@ -19,7 +19,7 @@
             for(i; i<7;i++)
             {
 		var Houry = Math.floor(parseFloat(y[i]));
-		var Minutey = (y[i] - Houry)/60;
+		var Minutey = (y[i] - Houry)/.6;
 		y[i] = Houry + Minutey;
              	var z = parseFloat(y[i]-x[i]);
              	var tempval = parseFloat(breaks[i]);
