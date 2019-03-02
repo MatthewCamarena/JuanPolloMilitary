@@ -18,9 +18,18 @@
             var tempbreak = 0;
             for(i; i<7;i++)
             {
+		if(y[i] != "")
+		{
 		var Houry = Math.floor(parseFloat(y[i]));
-		var Minutey = (y[i] - Houry)/.6;
+		var Minutey = (x[i] - Houry)/.6;
 		y[i] = Houry + Minutey;
+		}
+		if(x[i] != "")
+		{
+		var Houry = Math.floor(parseFloat(y[i]));
+		var Minutey = (x[i] - Houry)/.6;    
+		x[i] = Houry + Minutey;
+		}
              	var z = parseFloat(y[i]-x[i]);
              	var tempval = parseFloat(breaks[i]);
              	if(tempval)
